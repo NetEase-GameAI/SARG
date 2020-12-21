@@ -1,4 +1,6 @@
 # SARG
+[![License](https://img.shields.io/badge/license-BSD--3--Clause-blue.svg)](https://raw.githubusercontent.com/NetEase-GameAI/SARG/master/LICENSE) 
+
 
 This repository is the implementation of [SARG: A Novel Semi Autoregressive Generator for Multi-turn Incomplete Utterance Restoration](https://arxiv.org/abs/2008.01474) in python 3.6 environment and pytorch 1.5.1.
 ![sarg](asset/sarg.png)
