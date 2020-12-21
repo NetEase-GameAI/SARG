@@ -1,6 +1,7 @@
 # SARG
 
-This repository is the implementation of `SARG: A Novel Semi Autoregressive Generator for Multi-turn Incomplete Utterance Restoration` in python 3.6 environment and pytorch 1.5.1.
+This repository is the implementation of [SARG: A Novel Semi Autoregressive Generator for Multi-turn Incomplete Utterance Restoration](https://arxiv.org/abs/2008.01474) in python 3.6 environment and pytorch 1.5.1.
+![sarg](asset/sarg.png)
 
 
 ## Requirements
@@ -13,7 +14,7 @@ pip install -r requirements.txt
 Note: install the torch-gpu version corresponding to the version of cuda. 
 
 ## Pretrained Models
-* First, you can first download the pretrained models [RoBERTa-wwm-ext, Chinese](https://github.com/ymcui/Chinese-BERT-wwm) for chiese dataset (rename it `chinese_roberta_wwm_ext_pytorch`) and  [bert-base-uncased](https://huggingface.co/bert-base-uncased/tree/main) for english dataset , 
+* First, you can first download the pretrained models [RoBERTa-wwm-ext, Chinese](https://github.com/ymcui/Chinese-BERT-wwm) for chinese dataset (rename it `chinese_roberta_wwm_ext_pytorch`) and  [bert-base-uncased](https://huggingface.co/bert-base-uncased/tree/main) for english dataset , 
 * Second, rename the `bert_config.json` to `config.json` in `chinese_roberta_wwm_ext_pytorch`.
 * Final, convert the BERT pretrained weights to initial weights of SARG by 
 ```
