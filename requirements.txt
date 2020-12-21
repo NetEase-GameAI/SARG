@@ -1,0 +1,9 @@
+numpy~=1.18.5
+nltk~=3.4.5
+rouge~=1.0.0
+torch~=1.5.1
+transformers~=2.9.1
+tqdm~=4.46.1
+tensorboardx~=1.7
+overrides~=3.0.0
+pathlib~=1.0.1

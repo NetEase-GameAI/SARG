@@ -1,0 +1,45 @@
+export CUDA_VISIBLE_DEVICES=0,1,2,3,4,5,6
+python -m torch.distributed.launch --nproc_per_node 7 --master_port 29500 run_train.py \
+    --output_dir sarg-ailab-no-cov \
+    --do_train \
+    --do_eval \
+    --output_best_dir sarg-ailab-no-cov-best \
+    --learning_rate 5e-5 \
+    --max_steps 2000 \
+    --save_total_limit 3 \
+    --save_steps 200 \
+    --per_gpu_train_batch_size 64 \
+    --per_gpu_eval_batch_size 64 \
+    --seed 42 \
+    --tokenizer_name BertTokenizer \
+    --logging_steps 200 \
+    --mode ailab \
+    --evaluate_during_training True \
+    --model_name_or_path Roberta-WWM-Init \
+    --train_data_file Restoration_200k_data/train.txt \
+    --eval_data_file Restoration_200k_data/valid.txt \
+    --alpha 3 \
+    --change_weight 1.5
+python -m torch.distributed.launch --nproc_per_node 7 --master_port 29500 run_train.py \
+    --output_dir sarg-ailab-on-cov \
+    --do_train \
+    --do_eval \
+    --output_best_dir sarg-ailab-on-cov-best \
+    --learning_rate 5e-6 \
+    --max_steps 2000 \
+    --save_total_limit 3 \
+    --save_steps 200 \
+    --per_gpu_train_batch_size 64 \
+    --per_gpu_eval_batch_size 64 \
+    --seed 42 \
+    --tokenizer_name BertTokenizer \
+    --logging_steps 200 \
+    --mode ailab \
+    --evaluate_during_training True \
+    --model_name_or_path sarg-ailab-no-cov  \
+    --cov_weight 1. \
+    --train_data_file Restoration_200k_data/train.txt \
+    --eval_data_file Restoration_200k_data/valid.txt \
+    --patience 400 \
+    --change_weight 1.5 \
+    --alpha 3

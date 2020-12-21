@@ -1,0 +1,26 @@
+export CUDA_VISIBLE_DEVICES=0
+python -u run_train.py \
+    --output_dir sarg-canard-no-cov \
+    --do_train \
+    --do_eval \
+    --output_best_dir sarg-canard-no-cov-best \
+    --learning_rate 5e-5 \
+    --num_train_epochs 5 \
+    --save_total_limit 3 \
+    --save_steps 200 \
+    --per_gpu_train_batch_size 8 \
+    --per_gpu_eval_batch_size 8 \
+    --seed 42 \
+    --tokenizer_name bert-base-uncased \
+    --logging_steps 200 \
+    --mode canard \
+    --evaluate_during_training True \
+    --model_name_or_path bert-base-uncased-init \
+    --train_data_file CANARD/train.txt \
+    --eval_data_file CANARD/dev.txt \
+    --alpha 3 \
+    --change_weight 1.5 \
+    --max_src_len 256 \
+    --max_ctx_len 256 \
+    --max_add_len 30 \
+    --language en
