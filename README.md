@@ -62,11 +62,16 @@ sh scripts/run_eval_english.sh
 If you use this code in your research, you can cite our paper.
 
 ```
-@article{huang2020sarg,
-  title={SARG: A Novel Semi Autoregressive Generator for Multi-turn Incomplete Utterance Restoration},
+@article{Huang_Li_Zou_Zhang_2021, 
+  title={SARG: A Novel Semi Autoregressive Generator for Multi-turn Incomplete Utterance Restoration}, 
   author={Huang, Mengzuo and Li, Feng and Zou, Wuhe and Zhang, Weidong},
-  journal={arXiv preprint arXiv:2008.01474},
-  year={2020}
+  journal={Proceedings of the AAAI Conference on Artificial Intelligence}, 
+  volume={35}, 
+  url={https://ojs.aaai.org/index.php/AAAI/article/view/17543}, 
+  number={14}, 
+  year={2021}, 
+  month={May}, 
+  pages={13055-13063} 
 }
 ```
 ## License
